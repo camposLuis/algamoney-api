@@ -8,7 +8,7 @@ CREATE TABLE pessoa (
 	cep VARCHAR(10),
 	cidade VARCHAR(30),
 	estado char(2),
-	ativo BOOLEAN
+	ativo BOOLEAN not null
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO pessoa (nome, logradouro, numero, complemento, bairro, cep, cidade, estado, ativo) values ('João Silva', 'Rua do Abacaxi', '10', null, 'Brasil', '38.400-120', 'Uberlândia', 'MG', true);
@@ -21,3 +21,5 @@ INSERT INTO pessoa (nome, logradouro, numero, complemento, bairro, cep, cidade, 
 INSERT INTO pessoa (nome, logradouro, numero, complemento, bairro, cep, cidade, estado, ativo) values ('Carlos Santana', 'Rua da Manga', '433', null, 'Centro', '31.400-120', 'Belo Horizonte', 'MG', true);
 INSERT INTO pessoa (nome, logradouro, numero, complemento, bairro, cep, cidade, estado, ativo) values ('Leonardo Oliveira', 'Rua do Músico', '566', null, 'Segismundo Pereira', '38.400-000', 'Uberlândia', 'MG', true);
 INSERT INTO pessoa (nome, logradouro, numero, complemento, bairro, cep, cidade, estado, ativo) values ('Isabela Martins', 'Rua da Terra', '1233', 'Apto 10', 'Vigilato', '99.400-120', 'Manaus', 'AM', true);
+INSERT INTO pessoa (nome, logradouro, numero, complemento, bairro, cep, cidade, estado, ativo) values ('Eliana', 'Rua Dos Benvindos', '101', null, 'Caiçaras', '38.702-174', 'Patos de Minas', 'MG', true);
+INSERT INTO pessoa (nome, logradouro, numero, complemento, bairro, cep, cidade, estado, ativo) values ('Luís Campos', 'Rua Dos Benvindos', '101', 'casa C', 'Caiçaras', '38.702-174', 'Patos de Minas', 'MG', true);

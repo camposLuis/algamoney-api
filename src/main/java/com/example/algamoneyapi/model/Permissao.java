@@ -7,27 +7,27 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "permissao")
 public class Permissao {
-	
+
 	@Id
-	private Long codigo;	
+	private Long codigo;
 	private String descricao;
-	
+
 	public Long getCodigo() {
 		return codigo;
 	}
-	
+
 	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
 	}
-	
+
 	public String getDescricao() {
 		return descricao;
 	}
-	
+
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -35,7 +35,7 @@ public class Permissao {
 		result = prime * result + ((codigo == null) ? 0 : codigo.hashCode());
 		return result;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -52,7 +52,5 @@ public class Permissao {
 			return false;
 		return true;
 	}
-	
-	
 
 }

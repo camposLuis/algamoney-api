@@ -20,7 +20,7 @@ import com.example.algamoneyapi.config.property.AlgamoneyApiProperty;
 
 @Component
 @Order(Ordered.HIGHEST_PRECEDENCE)
-public class CorsFilter implements Filter{
+public class CorsFilter implements Filter {
 
 	@Autowired
 	private AlgamoneyApiProperty algamoneyApiProperty;
@@ -28,18 +28,19 @@ public class CorsFilter implements Filter{
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
-		
+
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse resp = (HttpServletResponse) response;
-		
+
 		resp.setHeader("Access-Control-Allow-Origin", algamoneyApiProperty.getOriginPermitida());
 		resp.setHeader("Access-Control-Allow-Credentials", "true");
-		
-		if ("OPTIONS".equals(req.getMethod()) && algamoneyApiProperty.getOriginPermitida().equals(req.getHeader("Origin"))) {
+
+		if ("OPTIONS".equals(req.getMethod())
+				&& algamoneyApiProperty.getOriginPermitida().equals(req.getHeader("Origin"))) {
 			resp.setHeader("Access-Control-Allow-Methods", "POST, GET, DELETE, PUT, OPTIONS");
 			resp.setHeader("Access-Control-Allow-Headers", "Authorization, Content-Type, Accept");
 			resp.setHeader("Access-Control-Max-Age", "3600");
-			
+
 			resp.setStatus(HttpServletResponse.SC_OK);
 		} else {
 			chain.doFilter(request, response);
@@ -47,11 +48,11 @@ public class CorsFilter implements Filter{
 	}
 
 	@Override
-	public void destroy() {		
+	public void destroy() {
 	}
-	
+
 	@Override
-	public void init(FilterConfig filterConfig) throws ServletException {		
+	public void init(FilterConfig filterConfig) throws ServletException {
 	}
 
 }

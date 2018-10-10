@@ -18,36 +18,36 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "lancamento")
 public class Lancamento {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
-	
+
 	@NotNull
 	private String descricao;
-	
+
 	@NotNull
 	@Column(name = "data_vencimento")
 	private LocalDate dataVencimento;
-	
+
 	@Column(name = "data_pagamento")
 	private LocalDate dataPagamento;
-	
+
 	@NotNull
 	private BigDecimal valor;
-	
+
 	private String observacao;
-	
+
 	@NotNull
 	@ManyToOne
-	@JoinColumn(name = "codigo_Categoria" )
+	@JoinColumn(name = "codigo_Categoria")
 	private Categoria categoria;
-	
+
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "codigo_Pessoa")
 	private Pessoa pessoa;
-	
+
 	@NotNull
 	@Enumerated(EnumType.STRING)
 	private TipoLancamento tipo;
@@ -107,7 +107,7 @@ public class Lancamento {
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
-	
+
 	public Pessoa getPessoa() {
 		return pessoa;
 	}
@@ -122,7 +122,7 @@ public class Lancamento {
 
 	public void setTipoLancamento(TipoLancamento tipo) {
 		this.tipo = tipo;
-	}	
+	}
 
 	@Override
 	public int hashCode() {

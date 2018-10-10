@@ -15,18 +15,18 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 @Table(name = "pessoa")
 public class Pessoa {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
-	
+
 	@NotNull
 	@Size(min = 5, max = 50)
 	private String nome;
-	
+
 	@Embedded
 	private Endereco endereco;
-	
+
 	@NotNull
 	private Boolean ativo;
 
@@ -61,7 +61,7 @@ public class Pessoa {
 	public void setAtivo(Boolean ativo) {
 		this.ativo = ativo;
 	}
-	
+
 	@JsonIgnore
 	@Transient
 	public boolean isInativo() {
@@ -91,6 +91,6 @@ public class Pessoa {
 		} else if (!codigo.equals(other.codigo))
 			return false;
 		return true;
-	}	
+	}
 
 }
